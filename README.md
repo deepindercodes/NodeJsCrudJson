@@ -1,4 +1,3 @@
-# NodeJsCrudJson
 CRUD functionality using Nodejs and JSON file as Database
 
 => This project is coded using Nodejs. The database used is an JSON file.

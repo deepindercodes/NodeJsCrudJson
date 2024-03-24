@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <%- include('../templates/header-include')-%>
+    <style type="text/css">
+        .articleimg {
+            max-width: 200px;
+            margin: 15px;
+            float: left;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-1">
+                &nbsp;
+            </div>
+            <div class="col-sm-10">
+                <ul class='list-group'>
+                    <li class='list-group-item fs-5 p-3 bg-primary text-white'>
+                        <%=objarticle.articletitle%></li>
+                    <li class='list-group-item p-2'>
+                        <p>
+                            <%if(objarticle.articleimage!=""){%>
+                                <img id="imgarticle" src="<%=objarticle.articleimage%>" class="img-fluid rounded articleimg"/>
+                            <%}%>
+                            <b>Author:</b>&nbsp;<%=objarticle.articleauthor%><br />
+                            <b>Date (UTC):</b>&nbsp;
+                            <%if(objarticle.modifiedonutc!=""){%>
+                                <%=objarticle.modifiedonutc%>
+                            <%} else { %>
+                                <%=objarticle.createdonutc%>
+                            <%}%>
+                            <br /><br />
+                            <%=objarticle.articlebody%>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-1">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+</body>
+</html>
